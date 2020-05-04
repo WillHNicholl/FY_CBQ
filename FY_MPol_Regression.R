@@ -35,7 +35,10 @@ mpdata[["date"]] <- as.Date(mpdata[["date"]])  # Tell R to treat the 'date' colu
 #
 
 library(ggplot2)
-ggplot(mpdata, aes(date)) + geom_line(aes(y=m1),colour="red") + geom_line(aes(y=p*10),colour="blue") + geom_line(aes(y=m3),colour="green") 
+ggplot(mpdata, aes(date)) +
+  geom_line(aes(y=m1),colour="red") +
+  geom_line(aes(y=p*10),colour="blue") +
+  geom_line(aes(y=m3),colour="green") 
 
 
 #
@@ -47,7 +50,7 @@ summary(mod1)
 
 
 # --- Add another variable (y)
-mod2 <- lm(p~m1 + y), data = mpdata)
+mod2 <- lm(p~m1 + y, data = mpdata)
 summary(mod2)
 
 
